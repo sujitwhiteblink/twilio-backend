@@ -36,9 +36,6 @@ const upload = multer({ dest: "./videos", storage: multer.memoryStorage() });
 
 videoChunks = [];
 
-app.get("/", (request, response)=>{
-  console.log("conection successfull with vercel");
-})
 
 
 app.post(
