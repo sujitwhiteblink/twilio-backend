@@ -51,6 +51,14 @@ app.post(
     let folderLength;
     let tempFile;
     let duration;
+
+    if (!fs.existsSync('./download')) {
+      fs.mkdirSync('./download');
+  }
+
+  if (!fs.existsSync('./videos')) {
+    fs.mkdirSync('./download');
+}
     
 
     // Write the buffer to a temporary file
@@ -59,7 +67,7 @@ app.post(
       if (err) {
         return response.status(500).send({ error: err });
       }
-      
+
       folderLength = files.length;
       tempFile = `./videos/temp${folderLength + 1}.mp4`;
       fs.writeFileSync(tempFile, mediaBlob);
