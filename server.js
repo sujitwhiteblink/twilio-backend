@@ -52,13 +52,13 @@ app.post(
     let tempFile;
     let duration;
 
-    if (!fs.existsSync('./download')) {
-      fs.mkdirSync('./download');
-  }
+//     if (!fs.existsSync('./download')) {
+//       fs.mkdirSync('./download');
+//   }
 
-  if (!fs.existsSync('./videos')) {
-    fs.mkdirSync('./videos');
-}
+//   if (!fs.existsSync('./videos')) {
+//     fs.mkdirSync('./videos');
+// }
     
 
     // Write the buffer to a temporary file
