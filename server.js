@@ -55,6 +55,11 @@ app.post(
 
     // Write the buffer to a temporary file
     fs.readdir("./download", (err, files) => {
+
+      if (err) {
+        return response.status(500).send({ error: err });
+      }
+      
       folderLength = files.length;
       tempFile = `./videos/temp${folderLength + 1}.mp4`;
       fs.writeFileSync(tempFile, mediaBlob);
