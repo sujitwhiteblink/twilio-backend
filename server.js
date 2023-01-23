@@ -57,7 +57,7 @@ app.post(
   }
 
   if (!fs.existsSync('./videos')) {
-    fs.mkdirSync('./download');
+    fs.mkdirSync('./videos');
 }
     
 
