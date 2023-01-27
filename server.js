@@ -36,6 +36,10 @@ const upload = multer({ dest: "./videos", storage: multer.memoryStorage() });
 
 videoChunks = [];
 
+app.get("/testConnection", (req,res)=>{
+  res.status(200).send("yes connected")
+})
+
 
 
 app.post(
