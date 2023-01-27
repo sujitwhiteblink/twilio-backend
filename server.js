@@ -6,7 +6,10 @@ const multer = require("multer");
 const port = process.env.port || 3031;
 
 const cors = require("cors");
-app.use(cors());
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST']
+}));
 
 const fs = require("fs");
 
@@ -36,8 +39,8 @@ const upload = multer({ dest: "./videos", storage: multer.memoryStorage() });
 
 videoChunks = [];
 
-app.get("/testConnection", (req,res)=>{
-  res.status(200).send("yes connected")
+app.post("/testConnection", (req,res)=>{
+  res.status(200).send("yes connected post")
 })
 
 
