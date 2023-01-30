@@ -43,6 +43,36 @@ app.post("/testConnection", (req,res)=>{
   res.status(200).send("yes connected post")
 })
 
+app.get("/countDownload",(req, res)=>{
+  fs.readdir("./download", (err, files) => {
+
+    if (err) {
+      return response.status(500).send({ error: err });
+    }
+    else{
+      const len = files.length;
+      console.log("no. of files in download folder", len);
+      res.status(200).send(`files count ${len}`,);
+    }
+  })
+
+})
+app.get("/countVideos",(req, res)=>{
+  fs.readdir("./videos", (err, files) => {
+
+    if (err) {
+      return response.status(500).send({ error: err });
+    }
+    else{
+      const len = files.length;
+      console.log("no. of files in temp folder", len);
+
+      res.status(200).send(`files count ${len}`,);
+    }
+  })
+
+})
+
 
 
 app.post(
